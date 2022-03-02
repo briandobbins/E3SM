@@ -3218,13 +3218,13 @@
       <env name="NUM_RS">$SHELL{echo "6*((`./xmlquery --value TOTAL_TASKS` + `./xmlquery --value TASKS_PER_NODE` - 1)/`./xmlquery --value TASKS_PER_NODE`)"|bc}</env>
     </environment_variables>
     <environment_variables compiler="ibm.*" mpilib="spectrum-mpi">
-      <env name="ADIOS2_DIR">/gpfs/alpine/cli115/world-shared/3rdparty/adios2/2.7.0/spectrum-mpi-10.4.0.3/xl-16.1.1-10</env>
+      <env name="ADIOS2_DIR">/gpfs/alpine/cli115/world-shared/3rdparty/adios2/2.7.1.1026/spectrum-mpi-10.4.0.3/xl-16.1.1-10</env>
     </environment_variables>
     <environment_variables compiler="pgi.*" mpilib="spectrum-mpi">
-      <env name="ADIOS2_DIR">/gpfs/alpine/cli115/world-shared/3rdparty/adios2/2.7.0/spectrum-mpi-10.4.0.3/nvhpc-21.3</env>
+      <env name="ADIOS2_DIR">/gpfs/alpine/cli115/world-shared/3rdparty/adios2/2.7.1.1026/spectrum-mpi-10.4.0.3/nvhpc-21.3</env>
     </environment_variables>
     <environment_variables compiler="gnu.*" mpilib="spectrum-mpi">
-      <env name="ADIOS2_DIR">/gpfs/alpine/cli115/world-shared/3rdparty/adios2/2.7.0/spectrum-mpi-10.4.0.3/gcc-9.1.0</env>
+      <env name="ADIOS2_DIR">/gpfs/alpine/cli115/world-shared/3rdparty/adios2/2.7.1.1026/spectrum-mpi-10.4.0.3/gcc-9.1.0</env>
     </environment_variables>
   </machine>
 
