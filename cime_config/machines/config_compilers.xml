@@ -721,6 +721,30 @@ flags should be captured within MPAS CMake files.
   <ZLIB_PATH>$ENV{ZLIB_PATH}</ZLIB_PATH>
 </compiler>
 
+<compiler MACH="aws-hpc6a" COMPILER="intel">
+  <CFLAGS>
+    <append> -qopt-report -march=core-avx2 -mtune=core-avx2 -no-fma</append>
+  </CFLAGS>
+  <FFLAGS>
+    <append> -qopt-report -march=core-avx2 -mtune=core-avx2  -no-fma</append>
+  </FFLAGS>
+  <CMAKE_OPTS>
+    <append DEBUG="TRUE"> -DPIO_ENABLE_LOGGING=ON </append>
+  </CMAKE_OPTS>
+  <FFLAGS>
+    <append MODEL="mom"> -r8 </append>
+  </FFLAGS>
+  <CPPDEFS>
+    <!-- these flags enable nano timers -->
+    <append MODEL="gptl"> -DHAVE_NANOTIME -DBIT64 -DHAVE_VPRINTF -DHAVE_BACKTRACE -DHAVE_SLASHPROC -DHAVE_COMM_F2C -DHAVE_TIMES -DHAVE_GETTIMEOFDAY </append>
+  </CPPDEFS>
+  <NETCDF_PATH>/opt/ncar/software</NETCDF_PATH>
+  <PNETCDF_PATH>/opt/ncar/software</PNETCDF_PATH>
+  <SLIBS>
+    <base> -lnetcdf -lnetcdff -lpnetcdf -lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread -lm -ldl </base>
+  </SLIBS>
+</compiler>
+
 <compiler MACH="anlgce" COMPILER="gnu">
   <CFLAGS>
     <append DEBUG="FALSE"> -O2  </append>
